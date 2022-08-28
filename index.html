@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section id="hero">
+        <header id="header">
+            <div class="nav-container">
+                <div class="brand">
+                    <a href="#">Portfo<span class="span-style">lio</span></a>
+                </div>
+                <nav class="nav_box">
+                    <ul class="mobil-menu">
+                        <li><a href="#" data-text="home">Home</a></li>
+                        <li><a href="#" data-text="about">About us</a></li>
+                        <li><a href="#" data-text="services">services</a></li>
+                        <li><a href="#" data-text="skills">skills</a></li>
+                        <li><a href="#" data-text="contact">contact us</a></li>
+                    </ul>
+                </nav>
+                <button class="btn">Subscribe</button>
+            </div>
+            <div class="hamburger">
+                <div class="bars"></div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="content">
+                <h5>Hello, my name is</h5>
+                <h1>Dre <span class="span-style">Abdola</span></h1>
+                <h3>I'am a Web Developer</h3>
+                <div class="input_box">
+                    <input type="text" placeholder="Enter your email">
+                    <button class="btn">let's start</button>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script>
+        let hamburger = document.querySelector(".hamburger");
+        let nav = document.querySelector(".nav_box");
+        hamburger.addEventListener("click", ()=>{
+            hamburger.classList.toggle("active");
+            nav.classList.toggle("active");
+        })
+    </script>
+</body>
+</html>

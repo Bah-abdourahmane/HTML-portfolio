@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600&family=Montserrat:wght@200;300;400;500;600&family=Poppins:wght@300;400;500;600;700&');
+
+/* 
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+ */
+ *{
+    margin: 0;
+    padding: 0;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.span-style{
+    color: #ff3762;
+}
+.btn{
+    text-align: center;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    background: #ff3762;
+    cursor: pointer;
+}
+/* ******************************************************** */
+
+/* ----------------------------- HERO ------------------------ */
+#hero{
+    background: url(./bg.jpg) no-repeat center/cover;
+    width: 100%;
+    padding: 0 100px;
+}
+#hero .container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100vh;
+}
+.container .content{
+    flex: 1;
+}
+.container .content h5{
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #c19396;
+}
+.container .content h1{
+    font-size: 5.2rem;
+    font-weight: 400;
+    margin: .5rem -8px;
+    padding: 0;
+}
+.container .content h3{
+    font-size: 1.5rem;
+    padding: 10px 0;
+}
+.container .input_box{
+    position: relative;
+    max-width: 350px;
+    min-width: 100px;
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    padding: 10px 5px;
+    border: 1px solid crimson;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+.container .input_box input{
+    flex: 1;
+    padding: 5px 8px;
+    color: black;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.container .input_box .btn{
+    letter-spacing: 1.2px;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, .5);
+    transition: .2s ease;
+}
+.container .input_box .btn:hover{
+    background: #000;
+}
+
+
+/* ----------------------------- HEADER ------------------------ */
+#header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: auto;
+    padding: 16px 100px;
+    z-index: 100;
+}
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-container .brand{
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    z-index: 10;
+}
+.nav-container .btn{
+    font-size: 1rem;
+    transition: .3s ease;
+    border: 1px solid transparent;
+}
+.nav-container .btn:hover{
+    border: 1px solid #ff3762;
+    color: #ff3762;
+    background: transparent ;
+}
+.nav_box ul{
+    display: flex;
+}
+.nav_box ul li:not(:last-child){
+    margin-right: 10px;
+}
+.nav_box ul li a{
+    display: inline-block;
+    font-size: 1rem;
+    text-transform: capitalize;
+    /* letter-spacing: 1.1px; */
+    padding: 10px 20px;
+    transition: all .2s ease;
+}
+.nav_box ul li a:hover{
+    color: #ff3762;
+    transform: scale(1.1);
+}
+
+
+/* ************** RESPONSIVITE ************* */
+
+@media (max-width:992px) {
+    #hero,#header{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .nav-container .brand a{
+        font-size: 2rem;
+    }
+    .nav_box ul li:not(:last-child){
+        margin-right: 5px;
+    }
+    .nav_box ul li a{
+        padding: 10px;
+    }
+    .container .content h1{
+        font-size: 5rem;
+    }
+}
+@media (max-width:768px) {
+    #hero,#header{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .hamburger{
+        position: relative;
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        width: 50px;
+        height: 50px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transform: scale(.8);
+        z-index: 100;
+    }
+    .hamburger::after{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        animation: pulsation 1s linear infinite;
+    }
+    .hamburger .bars{
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        transition: all .5s ease;
+    }
+    .hamburger .bars::after,
+    .hamburger .bars::before{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: #fff;
+    }
+    .hamburger .bars::after{
+        bottom: 12px;
+    }
+    .hamburger .bars::before{
+        top: 12px;
+    }
+    .hamburger.active .bars::after{
+        bottom: 20px;
+    }
+    .hamburger.active .bars::before{
+        top: 20px;
+    }
+    @keyframes pulsation {
+        to{
+            transform: scale(1);
+        }
+        from{
+            transform: scale(1.3);
+        }
+    }
+
+    .nav-_box{
+        position: relative;
+    }
+    .nav_box .mobil-menu{
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #444;
+        transition: left .5s ease-in;
+    }
+    .nav_box.active .mobil-menu{
+        left: 0;
+    }
+    .nav-container .brand{
+        position: absolute;
+        left: 40px;
+        top: 20px;
+    }
+    .nav-container .btn{
+        display: none;
+    }
+    .nav_box ul li{
+        margin-bottom: 16px;
+    }
+    .nav_box ul li a{
+        display: block;
+        font-size: 1.5rem;
+        transition: all .5s ease;
+    }
+    .nav_box .mobil-menu a::after{
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        font-size: 4rem;
+        letter-spacing: 2rem;
+        opacity: .2;
+        transform: translate(-50%,-50%);
+    }
+    .nav_box ul li a:hover::after{
+        content: attr(data-text);
+    }
+    .container .content h1{
+        font-size: 4.5rem;
+    }
+}
+@media (max-width:445px) {
+    .container .content h1{
+        font-size: 3rem;
+    }
+    .container .content h5{
+        font-size: 1.2rem;
+    }
+    .container .content h3{
+        font-size: 1rem;
+    }
+    .container .input_box .btn{
+        padding: 8px;
+        flex: 1;
+        letter-spacing: normal;
+    }
+    .container .input_box input{
+        flex: none;
+        font-size: 1rem;
+        padding: 5px;
+        width: 50%;
+    }
+}
