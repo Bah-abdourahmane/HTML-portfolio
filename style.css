@@ -78,7 +78,7 @@ ul{
     align-items: center;
     background: #fff;
 }
-.container .input_box input{
+.container .input_box .mail{
     flex: 1;
     padding: 5px 8px;
     color: black;
@@ -299,7 +299,7 @@ ul{
         flex: 1;
         letter-spacing: normal;
     }
-    .container .input_box input{
+    .container .input_box .mail{
         flex: none;
         font-size: 1rem;
         padding: 5px;
